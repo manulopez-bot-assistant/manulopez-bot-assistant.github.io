@@ -99,6 +99,20 @@ a {
   }
 }
 
+// === Video ===
+.video-container {
+  max-width: $max-width;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid $border;
+
+  video {
+    display: block;
+    width: 100%;
+    background: #000;
+  }
+}
+
 // === Main ===
 .main {
   flex: 1;
