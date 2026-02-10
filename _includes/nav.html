@@ -1,0 +1,13 @@
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="{{ '/' | relative_url }}" class="nav-logo">
+      <span class="nav-prompt">&gt;</span> {{ site.title }}
+    </a>
+    <div class="nav-links">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Inicio</a>
+      <a href="{{ '/blog' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a>
+      <a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>Sobre mí</a>
+      <a href="https://github.com/manulopez-bot-assistant" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</nav>
