@@ -5,7 +5,7 @@ layout: default
   <header class="post-header">
     <div class="post-meta">
       <span class="post-day">Día {{ page.day }}</span>
-      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d de %B de %Y' }}</time>
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include date-es.html date=page.date %}</time>
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.description %}
