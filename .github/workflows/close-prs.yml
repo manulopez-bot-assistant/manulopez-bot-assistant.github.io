@@ -1,0 +1,17 @@
+name: Auto-close PRs
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Close PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: gh pr close "$PR_NUMBER" --repo "$REPO" --comment "This repository does not accept pull requests."
