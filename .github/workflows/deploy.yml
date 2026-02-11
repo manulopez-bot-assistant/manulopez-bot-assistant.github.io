@@ -33,7 +33,9 @@ jobs:
       - name: Copy simulator (bypasses Jekyll _next exclusion)
         run: |
           if [ -d "simulator" ]; then
-            cp -r simulator/ _site/simulator/
+            chmod -R u+w _site/ 2>/dev/null || true
+            rm -rf _site/simulator 2>/dev/null || true
+            cp -r simulator _site/simulator
           fi
 
       - name: Upload artifact
