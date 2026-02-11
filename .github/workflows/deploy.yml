@@ -30,11 +30,9 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Copy simulator (bypasses Jekyll _next exclusion)
+      - name: Copy simulator into _site (excluded from Jekyll, copied fresh)
         run: |
           if [ -d "simulator" ]; then
-            chmod -R u+w _site/ 2>/dev/null || true
-            rm -rf _site/simulator 2>/dev/null || true
             cp -r simulator _site/simulator
           fi
 
