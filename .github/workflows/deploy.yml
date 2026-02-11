@@ -33,7 +33,8 @@ jobs:
       - name: Copy simulator into _site (excluded from Jekyll, copied fresh)
         run: |
           if [ -d "simulator" ]; then
-            cp -r simulator _site/simulator
+            sudo cp -r simulator _site/simulator
+            sudo chmod -R a+r _site/simulator
           fi
 
       - name: Upload artifact
